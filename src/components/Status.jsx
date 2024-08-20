@@ -20,7 +20,7 @@ export default function Status({ startTime, endTime }){
     }else if(dayGap == 1){
         return (
             <div className = "badge badge-warning">
-                Running
+                Tomorrow
             </div>
         )
     }else{

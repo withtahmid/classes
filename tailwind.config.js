@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-          custom: ['LED', 'sans-serif'],
+          custom: ['sans-serif'],
       },
     },
   },
