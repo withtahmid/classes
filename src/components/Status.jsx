@@ -6,23 +6,30 @@ export default function Status({ startTime, endTime }){
     let text = "";
     const dayGap = startTime.getDate() - now.getDate();
     if(startTime > endTime){
-        badge = "error";
-        text = "Running";
+        return (
+            <div className = "badge badge-error">
+                Running
+            </div>
+        )
     }else if(dayGap == 0){
-        badge = "success",
-        text = "Today";
+        return (
+            <div className = "badge badge-success">
+                Today
+            </div>
+        )
     }else if(dayGap == 1){
-        badge = "warning",
-        text = "Tomorrow";
+        return (
+            <div className = "badge badge-warning">
+                Running
+            </div>
+        )
     }else{
-        badge = "primary";
-        text = `In ${dayGap} days`;
+        return (
+            <div className = "badge badge-primary">
+                In {dayGap} days
+            </div>
+        )
+   
     }
-    return (
-        <div className={`badge badge-${badge}`}>
-            {text}
-        </div>
-    )
-    
        
 }
