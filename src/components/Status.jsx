@@ -1,10 +1,7 @@
 import { useState } from "react";
 
 export default function Status({ startTime, endTime }){
-    const now = new Date();
-    let badge = "";
-    let text = "";
-    const dayGap = startTime.getDate() - now.getDate();
+    const dayGap = Math.ceil((startTime - new Date()) / (1000 * 60 * 60 * 24 ))
     if(startTime > endTime){
         return (
             <div className = "badge badge-error">
