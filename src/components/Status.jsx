@@ -5,7 +5,8 @@ export default function Status({ startTime, endTime }){
     now.setHours(0, 0, 0, 0)
     let badge = "";
     let text = "";
-    const dayGap = Math.floor((startTime - now) / (1000 * 60 * 60 * 24 ))
+    const dayGap = Math.floor((startTime - now) / (1000 * 60 * 60 * 24 ));
+    const dayName = startTime.toLocaleDateString('en-US', { weekday: 'long' });
     if(startTime > endTime){
         return (
             <div className = "badge badge-error">
@@ -27,10 +28,8 @@ export default function Status({ startTime, endTime }){
     }else{
         return (
             <div className = "badge badge-primary">
-                In {dayGap} days
+                {dayName}
             </div>
         )
-   
     }
-       
 }

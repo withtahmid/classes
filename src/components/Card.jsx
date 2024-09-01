@@ -10,8 +10,16 @@ export default function Card({ course }){
                 <div>{course.course}</div>
                 <div className="flex content-between gap-3">    
                     <div>{course.faculty}</div>
-                    <div>|</div>
-                    <div className="font-bold"> {course.room}</div>
+                    <div> | </div>
+                    {
+                        course.room.startsWith("SAC") ? 
+                        <div className="font-bold p-3 badge text-accent"> {course.room}</div> : 
+                        course.room.startsWith("NAC") ?
+                        <div className="font-bold p-3 badge text-secondary"> {course.room}</div> : 
+                        <div className="font-bold p-3 badge text-primary"> {course.room}</div> 
+
+                    }
+                    
                 </div>
                 <div className="flex content-between gap-3 font-mono text-lg">
                     <div className="text-lg">{course.time} {course.classDay}</div>
